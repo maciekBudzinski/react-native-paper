@@ -1,16 +1,20 @@
-version: 1.0
+# Apex Sentinel config override for this repository.
+#
+# Only the keys below may be set here; everything else is controlled by the Sentinel operator.
+# Anything left out keeps the operator default.
 
 user_settings:
+  # Who may start a review, besides the account that linked the installation.
   reviewers:
-    - doberjohn
-    - lukewalczak
-    - artus9033
-    - Stoneski93
-    - alpharius-ck
-    - xdimota7x
-    - jacekAtCK
-    - kachmashk
-  review_drafts: false
-  report_floor: corroborated-minor
+    - maciekBudzinski
 
-issues: false
+# What `/verify` installs and checks. Read from the default branch, never from the pull request.
+verify_target:
+  app:
+    bundle_id: com.callstack.reactnativepaperexample
+    platform: ios
+    device: iPhone 17
+  build:
+    # Builds the example app for every pull request and uploads the simulator build.
+    workflow: build-example-apps.yml
+    artifact: react-native-paper-example.app.zip
