@@ -91,7 +91,7 @@ const SnackbarExample = () => {
               setOptions({ ...options, showSnackbar: !showSnackbar })
             }
           >
-            {showSnackbar ? 'Hide' : 'Show'}
+            {showSnackbar ? 'Hide snackbar' : 'Show snackbar'}
           </Button>
         </View>
       </ScreenWrapper>
